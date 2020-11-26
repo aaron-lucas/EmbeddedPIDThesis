@@ -1,0 +1,104 @@
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
+| Date         : Tue Nov 10 21:38:56 2020
+| Host         : Wack-intosh running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file System_control_sets_placed.rpt
+| Design       : System
+| Device       : xc7a100t
+------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    26 |
+|    Minimum number of control sets                        |    26 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    49 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    26 |
+| >= 0 to < 4        |     3 |
+| >= 4 to < 6        |     1 |
+| >= 6 to < 8        |     7 |
+| >= 8 to < 10       |     0 |
+| >= 10 to < 12      |     0 |
+| >= 12 to < 14      |     1 |
+| >= 14 to < 16      |     0 |
+| >= 16              |    14 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |             394 |          153 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |              91 |           38 |
+| Yes          | No                    | No                     |             230 |           78 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |             148 |           40 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++-----------------+--------------------------------------------+----------------------------------------+------------------+----------------+--------------+
+|   Clock Signal  |                Enable Signal               |            Set/Reset Signal            | Slice Load Count | Bel Load Count | Bels / Slice |
++-----------------+--------------------------------------------+----------------------------------------+------------------+----------------+--------------+
+|  systemClk_BUFG | pidController/ready_i_1_n_0                | resetBtn_IBUF                          |                1 |              1 |         1.00 |
+|  systemClk_BUFG | pidController/E[0]                         | pidController/SS[0]                    |                1 |              2 |         2.00 |
+|  clk_IBUF_BUFG  |                                            |                                        |                2 |              3 |         1.50 |
+|  systemClk_BUFG | pidController/Mdr/E[0]                     | resetBtn_IBUF                          |                1 |              4 |         4.00 |
+|  systemClk_BUFG |                                            | pidController/Mpy/bit[4]_i_1__0_n_0    |                3 |              6 |         2.00 |
+|  systemClk_BUFG |                                            | pidController/Mdr/bit[4]_i_1__2_n_0    |                3 |              6 |         2.00 |
+|  systemClk_BUFG |                                            | pidController/Mdd/bit[4]_i_1__4_n_0    |                4 |              6 |         1.50 |
+|  systemClk_BUFG |                                            | pidController/Mdy/bit[4]_i_1__3_n_0    |                3 |              6 |         2.00 |
+|  systemClk_BUFG |                                            | pidController/Mie/bit[4]_i_1__1_n_0    |                3 |              6 |         2.00 |
+|  systemClk_BUFG |                                            | pidController/Mpr/bit[4]_i_1_n_0       |                3 |              6 |         2.00 |
+|  systemClk_BUFG | quadratureModule/prevChB[2]_i_1_n_0        |                                        |                3 |              6 |         2.00 |
+|  systemClk_BUFG | pidController/ctrl_sig[31]_i_2_n_0         | pidController/ctrl_sig[31]_i_1_n_0     |                3 |             13 |         4.33 |
+|  systemClk_BUFG | quadratureModule/countEnable__0            | quadratureModule/tickCount[16]_i_1_n_0 |                4 |             16 |         4.00 |
+|  systemClk_BUFG | sampleClk_reg_n_0                          | resetBtn_IBUF                          |                6 |             16 |         2.67 |
+|  systemClk_BUFG |                                            | sampleClkCounter[20]_i_1_n_0           |                6 |             21 |         3.50 |
+|  systemClk_BUFG | pidController/ctrl_sig_unsat               |                                        |                8 |             32 |         4.00 |
+|  systemClk_BUFG | pidController/integral_prev[31]_i_1_n_0    | resetBtn_IBUF                          |                8 |             32 |         4.00 |
+|  systemClk_BUFG | pidController/Mpr/result[31]_i_1_n_0       |                                        |               11 |             32 |         2.91 |
+|  systemClk_BUFG | pidController/Mdd/result[31]_i_1__4_n_0    |                                        |               12 |             32 |         2.67 |
+|  systemClk_BUFG | pidController/Mpy/result[31]_i_1__0_n_0    |                                        |                9 |             32 |         3.56 |
+|  systemClk_BUFG | pidController/Mdy/result[31]_i_1__3_n_0    |                                        |               13 |             32 |         2.46 |
+|  systemClk_BUFG | pidController/Mdr/result[31]_i_1__2_n_0    |                                        |               12 |             32 |         2.67 |
+|  systemClk_BUFG | pidController/Mie/result[31]_i_1__1_n_0    |                                        |               10 |             32 |         3.20 |
+|  systemClk_BUFG |                                            | resetBtn_IBUF                          |               13 |             34 |         2.62 |
+|  systemClk_BUFG | pidController/FSM_onehot_state_reg_n_0_[2] | resetBtn_IBUF                          |               16 |             64 |         4.00 |
+|  systemClk_BUFG |                                            |                                        |              151 |            391 |         2.59 |
++-----------------+--------------------------------------------+----------------------------------------+------------------+----------------+--------------+
+
+

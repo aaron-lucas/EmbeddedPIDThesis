@@ -1,0 +1,75 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{setspace}
+
+
+\begin{document}
+
+\begin{equation}
+    u(t) = K_p e(t) + K_i \int_0^t{e(\tau)d\tau} +  K_d \frac{de(t)}{dt}
+    \tag{1a}
+\end{equation}
+
+\begin{equation}
+    u(t) = K_p \left( b r(t) - y(t) \right) + K_i \int_0^t{e(\tau) d\tau} + K_d \frac{d}{dt}\Big( c r(t) - y(t) \Big)
+    \tag{1b}
+\end{equation}
+\\[2cm]
+\begin{equation}
+    D(s) = \frac{K_ds}{1+\frac{1}{N}s} (cR(s)-Y(s))
+    \tag{2a}
+\end{equation}
+
+\begin{equation}
+    \left(N + s\right)D(s) = K_dNs(cR(s)-Y(s))
+    \tag{2b}
+\end{equation}
+
+\begin{equation}
+    ND(t) + \frac{dD(t)}{dt} = K_dN\frac{d}{dt}\Big( c r(t) - y(t) \Big)
+    \tag{2c}
+\end{equation}
+
+\begin{equation}
+    P[k] = K_p(br[k]-y[k])
+    \tag{3a}
+\end{equation}
+
+\begin{equation}
+    I[k] = I[k-1] + K_iT_s(r[k]-y[k])
+    \tag{3b}
+\end{equation}
+
+\begin{equation}
+    ND[k]+\frac{D[k]-D[k-1]}{T_s} = K_dN\frac{cr[k]-y[k] + cr[k-1] - y[k-1]}{T_s}
+    \tag{4a}
+\end{equation}
+
+\begin{equation}
+    (1 + NT_s)D[k] = D[k-1] + K_dN\bigg((cr - y)[k] - (cr - y)[k-1]\bigg)
+    \tag{4b}
+\end{equation}
+
+\begin{equation}
+    D[k] = \frac{1}{1+NT_s}\bigg(D[k-1] + K_dN\big((cr - y)[k] - (cr - y)[k-1]\big)\bigg)
+    \tag{4c}
+\end{equation}
+
+
+\begin{equation}
+    P[k] = K_p e[k]
+    \tag{5a}
+\end{equation}
+
+\begin{equation}
+    I[k] = I[k-1] + K_i T_s e[k]
+    \tag{5b}
+\end{equation}
+
+\begin{equation}
+    D[k] = K_d f_s (e[k] - e[k-1])
+    \tag{5c}
+\end{equation}
+
+
+\end{document}
